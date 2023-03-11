@@ -1,15 +1,41 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
+import CONFIG from '../config';
+import Project from './Project';
 
 const Projects = () => {
+  const [projects, setProjects] = useState([]);
+  const [toProjectsPage, setToProjectsPage] = useState(false);
+
+  const fetchProjectsData = () => {
+    fetch(`${CONFIG.BACKEND_URL}/projects`)
+      .then((res) => res.json())
+      .then((resJson) => setProjects(resJson))
+      .catch((err) => alert(err));
+  };
+
+  const buttonHandler = () => {
+    setToProjectsPage(true);
+  };
+
+  useEffect(() => fetchProjectsData(), []);
+
   return (
     <div id="projects" className="container">
       <h1 className="border-effect head-of-each-section">Projects</h1>
 
-      <div id="projects-subcontainer"></div>
+      <div id="projects-subcontainer">
+        {projects.length > 0
+          ? projects.slice(0, 2).map((data, index) => {
+              return (
+                <Project key={index} number={index + 1} projectData={data} />
+              );
+            })
+          : null}
+      </div>
 
-      <a className="button-effect button-yellow" href="#/projects">
+      <button className="button-effect button-yellow" onClick={buttonHandler}>
         👀See More Projects
-      </a>
+      </button>
     </div>
   );
 };
