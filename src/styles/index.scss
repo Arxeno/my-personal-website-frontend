@@ -160,6 +160,7 @@ footer p {
 }
 
 .button-effect {
+  position: relative;
   box-shadow: 2px 2px black;
   border: 2px solid black;
   border-radius: 10px;
@@ -171,6 +172,8 @@ footer p {
 }
 
 .button-effect:active {
+  top: 2px;
+  left: 2px;
   box-shadow: 0 0;
 }
 
