@@ -33,7 +33,11 @@ const Projects = () => {
           : null}
       </div>
 
-      <button className="button-effect button-yellow" onClick={buttonHandler}>
+      <button
+        id="see-more-projects"
+        className="button-effect button-yellow"
+        onClick={buttonHandler}
+      >
         👀See More Projects
       </button>
     </div>

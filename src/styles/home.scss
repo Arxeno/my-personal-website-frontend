@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@400;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;700;800;900&display=swap');
 
 $green: #50ffaf;
 $blue: #4b69ff;
@@ -42,7 +42,7 @@ $black-border: 3px solid black;
       flex-direction: column;
       justify-content: center;
       margin: auto;
-    
+
       #intro-text {
         font-size: 95px;
         font-weight: 900;
@@ -158,7 +158,7 @@ $black-border: 3px solid black;
             flex-wrap: wrap;
             width: -moz-fit-content;
             width: fit-content;
-            
+
             div {
               font-weight: bold;
               margin: 5px 5px;
@@ -168,7 +168,7 @@ $black-border: 3px solid black;
       }
     }
 
-    a[href="#/projects"] {
+    button#see-more-projects {
       display: block;
       margin: auto;
     }
