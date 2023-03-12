@@ -7,8 +7,19 @@ import Skills from '../components/Skills';
 import '../styles/home.scss';
 import '../styles/responsive-home.scss';
 
-const Home = () => {
+const HomePage = () => {
   document.querySelector('body')!.className = 'homePage';
+  const homeButton = document.querySelector<HTMLElement>('#homeButton');
+  const overviewMeButton =
+    document.querySelector<HTMLElement>('#overviewMeButton');
+
+  if (homeButton) {
+    homeButton!.style.display = 'none';
+  }
+
+  if (overviewMeButton) {
+    overviewMeButton!.style.display = 'block';
+  }
 
   return (
     <div id="main">
@@ -22,4 +33,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;
