@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Navigate } from 'react-router-dom';
 import CONFIG from '../config';
 import Project from './Project';
 
@@ -25,7 +26,7 @@ const Projects = () => {
 
       <div id="projects-subcontainer">
         {projects.length > 0
-          ? projects.slice(0, 2).map((data, index) => {
+          ? projects.slice(0, 3).map((data, index) => {
               return (
                 <Project key={index} number={index + 1} projectData={data} />
               );
@@ -40,6 +41,8 @@ const Projects = () => {
       >
         👀See More Projects
       </button>
+
+      {toProjectsPage ? <Navigate to="/projects" /> : null}
     </div>
   );
 };

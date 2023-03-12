@@ -1,4 +1,17 @@
+import { useEffect, useState } from 'react';
+import { Navigate } from 'react-router-dom';
+
 const Navbar = () => {
+  const [toHomePage, setToHomePage] = useState(false);
+
+  const linkHandler = () => {
+    setToHomePage(true);
+  };
+
+  useEffect(() => {
+    setToHomePage(false);
+  });
+
   return (
     <header id="header-nav">
       <h1>Raisyam✨</h1>
@@ -16,7 +29,7 @@ const Navbar = () => {
             <a
               id="homeButton"
               className="button-effect button-yellow"
-              href="#/home"
+              onClick={linkHandler}
             >
               🏠Home
             </a>
@@ -37,6 +50,7 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
+      {toHomePage ? <Navigate to="/" /> : null}
     </header>
   );
 };
