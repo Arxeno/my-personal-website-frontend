@@ -78,8 +78,8 @@ $black-border: 3px solid black;
     padding: 20px;
 
     #skills-subcontainer {
-      display: flex;
-      flex-direction: row;
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
       overflow-x: scroll;
       margin-top: 20px;
 
@@ -88,7 +88,7 @@ $black-border: 3px solid black;
         margin: 0 15px 13px;
 
         img {
-          height: 250px;
+          height: 125px;
         }
       }
     }
