@@ -201,4 +201,21 @@ $black-border: 3px solid black;
       }
     }
   }
+
+  #contact-me {
+    background: $magenta;
+    border-top: $black-border;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 'first-name last-name email' 'message message message' 'send empty empty';
+
+    input:focus,
+    textarea:focus {
+      top: 3px;
+      left: 3px;
+      box-shadow: 0 0;
+    }
+  }
 }

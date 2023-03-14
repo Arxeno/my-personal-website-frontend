@@ -1,11 +1,29 @@
 import { useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
+import {
+  closeDrawerContact,
+  closeDrawerNav,
+  toggleDrawerContact,
+  toggleDrawerNav,
+} from '../helpers/helpers';
 
 const Navbar = () => {
   const [toHomePage, setToHomePage] = useState(false);
 
   const linkHandler = () => {
     setToHomePage(true);
+  };
+
+  const contactButtonHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
+    closeDrawerNav();
+    toggleDrawerContact(event);
+  };
+
+  const hamburgerButtonHandler = (
+    event: React.MouseEvent<HTMLButtonElement>
+  ) => {
+    closeDrawerContact();
+    toggleDrawerNav(event);
   };
 
   useEffect(() => {
@@ -15,7 +33,11 @@ const Navbar = () => {
   return (
     <header id="header-nav">
       <h1>Raisyam✨</h1>
-      <button id="hamburger-menu__button" className="button-effect">
+      <button
+        id="hamburger-menu__button"
+        className="button-effect"
+        onClick={hamburgerButtonHandler}
+      >
         <img src="images/hamburger-menu.svg" alt="Hamburger menu" />
       </button>
       <nav id="drawerNav">
@@ -44,7 +66,11 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <button id="contactButton" className="button-effect button-yellow">
+            <button
+              id="contactButton"
+              className="button-effect button-yellow"
+              onClick={contactButtonHandler}
+            >
               📱Contact
             </button>
           </li>

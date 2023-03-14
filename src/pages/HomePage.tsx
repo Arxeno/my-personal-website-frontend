@@ -1,9 +1,11 @@
 import AboutMe from '../components/AboutMe';
+import ContactMe from '../components/ContactMe';
 import Introduction from '../components/Introduction';
 import OverviewMe from '../components/OverviewMe';
 import Projects from '../components/Projects';
 import Services from '../components/Services';
 import Skills from '../components/Skills';
+import { closeDrawerContact, closeDrawerNav } from '../helpers/helpers';
 import '../styles/home.scss';
 import '../styles/responsive-home.scss';
 
@@ -21,8 +23,13 @@ const HomePage = () => {
     overviewMeButton!.style.display = 'block';
   }
 
+  const mainClickHandler = (): void => {
+    closeDrawerContact();
+    closeDrawerNav();
+  };
+
   return (
-    <div id="main">
+    <div id="main" onClick={mainClickHandler}>
       <Introduction />
       <OverviewMe />
       <Skills />

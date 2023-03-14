@@ -27,7 +27,7 @@ $black-border: $border-small solid black;
         flex-direction: column;
 
         li {
-          margin: 15px 0;
+          margin: 15px 0 !important;
 
           a,
           button {
