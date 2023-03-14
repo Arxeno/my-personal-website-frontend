@@ -6,9 +6,15 @@ import Project from './Project';
 const Projects = () => {
   const [projects, setProjects] = useState([]);
   const [toProjectsPage, setToProjectsPage] = useState(false);
+  const page = window.location.href.split('/')[3];
+  let fetchString = `${CONFIG.BACKEND_URL}/projects`;
+
+  if (page !== 'projects') {
+    fetchString += `?numberOfProject=3`;
+  }
 
   const fetchProjectsData = () => {
-    fetch(`${CONFIG.BACKEND_URL}/projects`)
+    fetch(fetchString)
       .then((res) => res.json())
       .then((resJson) => setProjects(resJson))
       .catch((err) => alert(err));
@@ -26,7 +32,7 @@ const Projects = () => {
 
       <div id="projects-subcontainer">
         {projects.length > 0
-          ? projects.slice(0, 3).map((data, index) => {
+          ? projects.map((data, index) => {
               return (
                 <Project key={index} number={index + 1} projectData={data} />
               );
@@ -34,13 +40,15 @@ const Projects = () => {
           : null}
       </div>
 
-      <button
-        id="see-more-projects"
-        className="button-effect button-yellow"
-        onClick={buttonHandler}
-      >
-        👀See More Projects
-      </button>
+      {page !== 'projects' ? (
+        <button
+          id="see-more-projects"
+          className="button-effect button-yellow"
+          onClick={buttonHandler}
+        >
+          👀See More Projects
+        </button>
+      ) : null}
 
       {toProjectsPage ? <Navigate to="/projects" /> : null}
     </div>
