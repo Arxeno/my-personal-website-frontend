@@ -9,6 +9,8 @@ import {
 
 const Navbar = () => {
   const [toHomePage, setToHomePage] = useState(false);
+  const [showMessage, setShowMessage] = useState(false);
+  const [message, setMessage] = useState('');
 
   const linkHandler = () => {
     setToHomePage(true);
@@ -77,6 +79,9 @@ const Navbar = () => {
         </ul>
       </nav>
       {toHomePage ? <Navigate to="/" /> : null}
+      <div id="message-box">
+        <p>Haloo</p>
+      </div>
     </header>
   );
 };
