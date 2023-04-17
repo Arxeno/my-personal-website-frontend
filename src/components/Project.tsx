@@ -1,12 +1,7 @@
 import CONFIG from '../config';
+import { TechnologyType } from '../type';
 import ProjectTitle from './ProjectTitle';
 import Technology from './Technology';
-
-type Technology = {
-  tech: string;
-  bgColor?: string;
-  fontColor?: string;
-};
 
 type Props = {
   number: number;
@@ -18,7 +13,7 @@ type Props = {
     fontColor?: string;
     isGradient: boolean;
     description: string;
-    technologies: Technology[];
+    technologies: TechnologyType[];
   };
 };
 
@@ -35,13 +30,13 @@ const Project = ({ number, projectData }: Props) => {
   } = projectData;
 
   return (
-    <div className="project">
+    <div className='project'>
       <img
-        className="button-effect"
+        className='button-effect'
         src={`${CONFIG.BACKEND_URL}/${image}`}
         alt={`project image of ${title}`}
       />
-      <div className="project-heading-n-paragraph">
+      <div className='project-heading-n-paragraph'>
         <ProjectTitle
           isGradient={isGradient}
           colors={colors}
@@ -51,7 +46,7 @@ const Project = ({ number, projectData }: Props) => {
           number={number}
         />
         <p>{description}</p>
-        <div className="project-techs-container">
+        <div className='project-techs-container'>
           {technologies.length > 0
             ? technologies.map((data, index) => {
                 return <Technology key={index} technology={data} />;
