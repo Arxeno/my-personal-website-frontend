@@ -208,3 +208,44 @@ footer p {
   border-radius: 10px;
   width: fit-content;
 }
+
+// #me
+
+.message-box-class {
+  position: fixed;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 3px solid black;
+  border-radius: 10px;
+  background: $red;
+  padding: 5px;
+  width: 50%;
+  min-width: 200px;
+  max-height: 90vw;
+  text-align: center;
+  animation-name: show-message;
+  animation-duration: 4s;
+}
+
+/*
+  ANIMATIONS
+*/
+
+@keyframes show-message {
+  0% {
+    top: -50px;
+  }
+
+  20% {
+    top: 20px;
+  }
+
+  80% {
+    top: 20px;
+  }
+
+  100% {
+    top: -50px;
+  }
+}

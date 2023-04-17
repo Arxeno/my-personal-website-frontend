@@ -10,9 +10,9 @@ const AboutMe = () => {
         </figure>
         <p>
           Hi! I am Raisyam. I love to learn many things including IT. Currently,
-          i'm learning Front-End Web Development. But at the same time, i'm also
-          learning all about start-ups and businesses. Because my dream is to
-          help people by contributing myself in Technology-based Business.
+          i'm learning Full Stack Web Development. But at the same time, i'm
+          also learning all about start-ups and businesses. Because my dream is
+          to help people by contributing myself in Technology-based Business.
         </p>
       </div>
     </div>
