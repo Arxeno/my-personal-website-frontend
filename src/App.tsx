@@ -19,7 +19,7 @@ function App() {
           <Route path='/projects' element={<ProjectsPage />} />
         </Routes>
         <Footer />
-        <MessageBox message='haloo' />
+        <MessageBox />
       </Router>
     </div>
   );

@@ -1,23 +1,37 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import GlobalStateContext from '../GlobalStateContext';
 
-type Props = {
-  message: string;
-  bgColor?: string;
-};
+const MessageBox = () => {
+  const { message, messageBoxColor } = useContext(GlobalStateContext);
 
-const MessageBox = ({ message, bgColor }: Props) => {
-  if (bgColor) {
-    return (
-      <div className='message-box-class' style={{ background: bgColor }}>
-        <p>{message}</p>
-      </div>
-    );
+  const handleOnAnimationEnd = () => {
+    message.setState(null);
+    messageBoxColor.setState(null);
+  };
+
+  if (message.state) {
+    if (messageBoxColor.state) {
+      return (
+        <div
+          className='message-box-class'
+          onAnimationEnd={handleOnAnimationEnd}
+          style={{ background: messageBoxColor.state }}
+        >
+          <p>{message.state}</p>
+        </div>
+      );
+    } else {
+      return (
+        <div
+          className='message-box-class'
+          onAnimationEnd={handleOnAnimationEnd}
+        >
+          <p>{message.state}</p>
+        </div>
+      );
+    }
   } else {
-    return (
-      <div className='message-box-class'>
-        <p>{message}</p>
-      </div>
-    );
+    return null;
   }
 };
 

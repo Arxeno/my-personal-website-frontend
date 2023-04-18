@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import GlobalStateContext from '../GlobalStateContext';
 
 const DrawerContact = () => {
+  const { message, messageBoxColor } = useContext(GlobalStateContext);
+
   return (
     <div id='drawerContact'>
       <a href='https://github.com/Raisyam/' target='_blank'>
@@ -14,7 +17,10 @@ const DrawerContact = () => {
 
       <button
         onClick={() => {
-          alert('My email: rmfbkw04@gmail.com');
+          if (!message.state) {
+            messageBoxColor.setState('#50ffaf');
+            message.setState('My email: rmfbkw04@gmail.com');
+          }
         }}
       >
         <img

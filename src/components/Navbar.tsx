@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import {
   closeDrawerContact,
@@ -6,11 +6,11 @@ import {
   toggleDrawerContact,
   toggleDrawerNav,
 } from '../helpers/helpers';
+import GlobalStateContext from '../GlobalStateContext';
 
 const Navbar = () => {
   const [toHomePage, setToHomePage] = useState(false);
-  const [showMessage, setShowMessage] = useState(false);
-  const [message, setMessage] = useState('');
+  const { message } = useContext(GlobalStateContext);
 
   const linkHandler = () => {
     setToHomePage(true);
@@ -45,7 +45,17 @@ const Navbar = () => {
       <nav id='drawerNav'>
         <ul id='nav-button'>
           <li>
-            <a id='blogsButton' className='button-effect button-yellow'>
+            <a
+              id='blogsButton'
+              className='button-effect button-yellow'
+              onClick={() => {
+                if (!message.state) {
+                  message.setState(
+                    'Coming soon! Sorry for the inconvenience 🙏'
+                  );
+                }
+              }}
+            >
               ✍Blogs
             </a>
           </li>
