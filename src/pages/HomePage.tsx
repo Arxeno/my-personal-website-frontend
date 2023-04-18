@@ -29,7 +29,7 @@ const HomePage = () => {
   };
 
   return (
-    <div id="main" onClick={mainClickHandler}>
+    <div id='main' onClick={mainClickHandler}>
       <Introduction />
       <OverviewMe />
       <Skills />

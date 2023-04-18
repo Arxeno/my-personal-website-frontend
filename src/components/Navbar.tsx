@@ -33,44 +33,44 @@ const Navbar = () => {
   });
 
   return (
-    <header id="header-nav">
+    <header id='header-nav'>
       <h1>Raisyam✨</h1>
       <button
-        id="hamburger-menu__button"
-        className="button-effect"
+        id='hamburger-menu__button'
+        className='button-effect'
         onClick={hamburgerButtonHandler}
       >
-        <img src="images/hamburger-menu.svg" alt="Hamburger menu" />
+        <img src='images/hamburger-menu.svg' alt='Hamburger menu' />
       </button>
-      <nav id="drawerNav">
-        <ul id="nav-button">
+      <nav id='drawerNav'>
+        <ul id='nav-button'>
           <li>
-            <a id="blogsButton" className="button-effect button-yellow">
+            <a id='blogsButton' className='button-effect button-yellow'>
               ✍Blogs
             </a>
           </li>
-          <li id="homeButton__li">
+          <li id='homeButton__li'>
             <a
-              id="homeButton"
-              className="button-effect button-yellow"
+              id='homeButton'
+              className='button-effect button-yellow'
               onClick={linkHandler}
             >
               🏠Home
             </a>
           </li>
-          <li id="overviewMeButton__li">
+          <li id='overviewMeButton__li'>
             <a
-              id="overviewMeButton"
-              className="button-effect button-yellow"
-              href="#overview-me-navbar"
+              id='overviewMeButton'
+              className='button-effect button-yellow'
+              href='#overview-me-navbar'
             >
               🧐Overview Me
             </a>
           </li>
           <li>
             <button
-              id="contactButton"
-              className="button-effect button-yellow"
+              id='contactButton'
+              className='button-effect button-yellow'
               onClick={contactButtonHandler}
             >
               📱Contact
@@ -78,10 +78,7 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
-      {toHomePage ? <Navigate to="/" /> : null}
-      <div id="message-box">
-        <p>Haloo</p>
-      </div>
+      {toHomePage ? <Navigate to='/' /> : null}
     </header>
   );
 };

@@ -209,8 +209,6 @@ footer p {
   width: fit-content;
 }
 
-// #me
-
 .message-box-class {
   position: fixed;
   top: -50px;
@@ -226,6 +224,7 @@ footer p {
   text-align: center;
   animation-name: show-message;
   animation-duration: 4s;
+  z-index: 10;
 }
 
 /*

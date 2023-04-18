@@ -1,22 +1,23 @@
-import { configureStore, createSlice } from "@reduxjs/toolkit";
+import { configureStore, createSlice } from '@reduxjs/toolkit';
 
 const messageBoxSlice = createSlice({
-	name: 'message',
-	initialState: '',
-	reducers: {
-		addMessage(state, action) {
-			state = action.payload
-		},
-		removeMessage(state, action) {
-			state = ''
-		}
-	}
-})
+  name: 'message',
+  initialState: '',
+  reducers: {
+    addMessage(state, action) {
+      state = action.payload;
+    },
+    removeMessage(state, action) {
+      state = '';
+    },
+  },
+});
 
 const store = configureStore({
-	reducer: {
-		message: messageBoxSlice.reducer
-	}
-})
+  reducer: {
+    message: messageBoxSlice.reducer,
+  },
+});
 
-export {store}
+export const { addMessage, removeMessage } = messageBoxSlice.actions;
+export { store };
