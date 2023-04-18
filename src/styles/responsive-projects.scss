@@ -1,16 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@400;700;800;900&display=swap");
-
-$green: #50ffaf;
-$blue: #4b69ff;
-$magenta: #ff00ff;
-$yellow: #f8ff1e;
-$violet: #9c7bff;
-$cyan: #45f9ff;
-$pink: #ff459c;
-$red: #f54c40;
-$border-small: 3px;
-$black-border: $border-small solid black;
-
 .projectsPage {
   @media (max-width: 768px) {
     #projects-subcontainer .project {
@@ -26,7 +13,7 @@ $black-border: $border-small solid black;
           width: fit-content;
           width: -moz-fit-content;
         }
-        
+
         .project-techs-container {
           margin: auto;
           justify-content: center;
