@@ -5,10 +5,18 @@ const messageBoxSlice = createSlice({
 	initialState: '',
 	reducers: {
 		addMessage(state, action) {
-			//
+			state = action.payload
 		},
 		removeMessage(state, action) {
-			//
+			state = ''
 		}
 	}
 })
+
+const store = configureStore({
+	reducer: {
+		message: messageBoxSlice.reducer
+	}
+})
+
+export {store}
