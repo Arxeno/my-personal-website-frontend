@@ -11,10 +11,7 @@ type Props = {
 const Skill = ({ skillData }: Props) => {
   return (
     <figure>
-      <img
-        src={`${CONFIG.BACKEND_URL}/${skillData.imageLink}`}
-        alt={skillData.alt}
-      />
+      <img src={`${skillData.imageLink}`} alt={skillData.alt} />
       <figcaption>{skillData.name}</figcaption>
     </figure>
   );

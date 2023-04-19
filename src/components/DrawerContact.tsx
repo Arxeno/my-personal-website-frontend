@@ -19,7 +19,7 @@ const DrawerContact = () => {
         onClick={() => {
           if (!message.state) {
             messageBoxColor.setState('#50ffaf');
-            message.setState('My email: rmfbkw04@gmail.com');
+            message.setState('Email me! rmfbkw04@gmail.com');
           }
         }}
       >

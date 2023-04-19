@@ -33,7 +33,7 @@ const Project = ({ number, projectData }: Props) => {
     <div className='project'>
       <img
         className='button-effect'
-        src={`${CONFIG.BACKEND_URL}/${image}`}
+        src={`${image}`}
         alt={`project image of ${title}`}
       />
       <div className='project-heading-n-paragraph'>

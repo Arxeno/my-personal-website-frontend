@@ -11,10 +11,7 @@ type Props = {
 const Service = ({ serviceData }: Props) => {
   return (
     <figure>
-      <img
-        src={`${CONFIG.BACKEND_URL}/${serviceData.imageLink}`}
-        alt={serviceData.alt}
-      />
+      <img src={`${serviceData.imageLink}`} alt={serviceData.alt} />
       <figcaption>{serviceData.name}</figcaption>
     </figure>
   );
