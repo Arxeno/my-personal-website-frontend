@@ -4,12 +4,18 @@ import '../styles/responsive-projects.scss';
 
 const ProjectsPage = () => {
   document.querySelector('body')!.className = 'projectsPage';
-  document.querySelector<HTMLElement>('#homeButton')!.style.display = 'block';
-  document.querySelector<HTMLElement>('#overviewMeButton')!.style.display =
-    'none';
+
+  if (
+    document.querySelector<HTMLElement>('#homeButton') &&
+    document.querySelector<HTMLElement>('#overviewMeButton')
+  ) {
+    document.querySelector<HTMLElement>('#homeButton')!.style.display = 'block';
+    document.querySelector<HTMLElement>('#overviewMeButton')!.style.display =
+      'none';
+  }
 
   return (
-    <div id="main">
+    <div id='main'>
       <Projects />
     </div>
   );
