@@ -12,6 +12,7 @@ function App() {
   return (
     <div className='App'>
       <Router>
+        <MessageBox />
         <Navbar />
         <DrawerContact />
         <Routes>
@@ -19,7 +20,6 @@ function App() {
           <Route path='/projects' element={<ProjectsPage />} />
         </Routes>
         <Footer />
-        <MessageBox />
       </Router>
     </div>
   );

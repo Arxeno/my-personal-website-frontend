@@ -213,7 +213,7 @@ footer p {
   text-align: center;
   animation-name: show-message;
   animation-duration: 3s;
-  z-index: 10;
+  z-index: 20;
 }
 
 /*
@@ -222,7 +222,7 @@ footer p {
 
 @keyframes show-message {
   0% {
-    top: -50px;
+    top: -100px;
   }
 
   20% {
@@ -234,6 +234,6 @@ footer p {
   }
 
   100% {
-    top: -50px;
+    top: -100px;
   }
 }
