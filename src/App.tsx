@@ -4,8 +4,6 @@ import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import ProjectsPage from './pages/ProjectsPage';
-import './styles/App.scss';
-import './styles/responsive.scss';
 import MessageBox from './components/MessageBox';
 
 function App() {
