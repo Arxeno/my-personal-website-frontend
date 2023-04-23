@@ -4,11 +4,15 @@ import App from './App';
 import './styles/index.scss';
 import './styles/responsive.scss';
 import { GlobalStateProvider } from './GlobalStateContext';
+import { store } from './app/store';
+import { Provider } from 'react-redux';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <GlobalStateProvider>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </GlobalStateProvider>
+  <React.StrictMode>
+    <GlobalStateProvider>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </GlobalStateProvider>
+  </React.StrictMode>
 );
